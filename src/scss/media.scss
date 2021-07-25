@@ -1,0 +1,56 @@
+@media (max-width: 555px) {
+	.calc {
+		min-width: 320px;
+		width: 100vw;
+		min-height: 100vh;
+		height: auto;
+		border-radius: 0;
+		box-shadow: none;
+		margin: 0;
+		@include adaptive('padding', 0, 44, 320, 555);
+		&__history {
+
+			@include adaptive('height', 50, 100, 320, 555);
+		}
+		&__res {
+			@include adaptive('margin-bottom', 12, 37, 320, 555);
+		}
+		// padding: 44px 48px;	
+		&__controls {
+			
+			&>* {
+				margin-top: 2px;
+				margin-bottom: 2px;
+				@include adaptive('margin-left', 0, 10, 320, 555);
+				@include adaptive('margin-right', 0, 10, 320, 555);
+				@include adaptive('padding-left', 0, 6, 320, 555);
+				@include adaptive('padding-right', 0, 6, 320, 555);
+				
+			}
+		}
+	}
+	.button {
+
+		&__contained {
+			&:hover {
+				box-shadow: none;
+			}
+			&:active {
+				animation: clickCF 450ms ease-in-out 1;
+				
+			}
+		}
+		&__default {
+			&:hover {
+				background-color: transparent;
+			}
+			&:active {
+				animation: clickDF 550ms ease-in-out 1;
+			}
+		}
+	}
+	.input {
+		padding: 18px 0;
+		@include adaptive('font-size', 40, 56, 320, 555);
+	}
+}

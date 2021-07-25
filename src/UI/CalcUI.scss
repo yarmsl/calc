@@ -1,0 +1,150 @@
+.button {
+	width: 80px;
+	height: 80px;
+	border-radius: $brBtn;
+	cursor: pointer;
+	font-size: $md;
+	font-family: $ff;
+	&__contained {
+		background-color: $bc;
+		color: $textDark;
+		box-shadow: none;
+		transition: box-shadow 250ms ease-in-out;
+		&:hover {
+			box-shadow: 0 0 7px $bc;
+			transition: box-shadow 250ms ease-in-out;
+		}
+		&:active {
+			animation: clickC 250ms ease-in-out 1;
+			
+		}
+	}
+	&__default {
+		background-color: $bd;
+		transition: background-color 250ms ease-in-out;
+		color: $textPrime;
+		&:hover {
+			background-color: $bdh;
+			transition: background-color 250ms ease-in-out;
+		}
+		&:active {
+			animation: clickD 250ms ease-in-out 1;
+		}
+	}
+}
+
+.box {
+	display: flex;
+	box-sizing: border-box;
+	&__row {
+		flex-direction: row;
+	}
+	&__row-reverse {
+		flex-direction: row-reverse;
+	}
+	&__column {
+		flex-direction: column;
+	}
+	&__column-reverse {
+		flex-direction: column-reverse;
+	}
+	&__align {
+		&_start {
+			align-items: flex-start;
+		}
+		&_center {
+			align-items: center;
+		}
+		&_end {
+			align-items: flex-end;
+		}
+	}
+	&__justify {
+		&_start {
+			justify-content: flex-start;
+		}
+		&_end {
+			justify-content: flex-end;
+		}
+		&_center {
+			justify-content: center;
+		}
+		&_around {
+			justify-content: space-around;
+		}
+		&_between {
+			justify-content: space-between;
+		}
+		&_evenly {
+			justify-content: space-evenly;
+		}
+	}
+	&__nowrap {
+		flex-wrap: nowrap;
+	}
+	&__wrap {
+		flex-wrap: wrap;
+	}
+	&__wrap-reverse {
+		flex-wrap: wrap-reverse;
+	}
+}
+
+.input {
+	background-color: transparent;
+	color: $textPrime;
+	font-family: $ff;
+	font-size: $lg;
+	text-align: right;
+	border-bottom: $border;
+	width: 100%;
+	padding: 18px 0;
+}
+
+@keyframes clickC {
+	0% {
+		box-shadow: 0 0 7px $bc;
+	}
+	50% {
+		box-shadow: none;
+	}
+	100% {
+		box-shadow: 0 0 7px $bc;
+	}
+}
+
+@keyframes clickD {
+	0% {
+		background-color: $bdh;
+	}
+	50% {
+		background-color: $bca;
+	}
+	100% {
+		background-color: $bdh;
+	}
+}
+
+@keyframes clickCF {
+	0% {
+		box-shadow: none;
+	}
+	50% {
+		box-shadow: 0 0 7px $bc;
+	}
+	100% {
+		box-shadow: none;
+	}
+}
+
+@keyframes clickDF {
+	0% {
+		background-color: $bca;
+	}
+	50% {
+		background-color: $bdh;
+	}
+	100% {
+		background-color: $bca;
+	}
+}

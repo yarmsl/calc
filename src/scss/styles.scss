@@ -1,0 +1,19 @@
+@import "mixins";
+@import "fonts";
+@import "nullStyle";
+@import "vars";
+
+//layouts
+@import "../layouts/MainLayout";
+
+//UI
+@import "../UI/CalcUI";
+
+//pages
+@import "../pages/404/NotFound";
+@import "../pages/Calc/Calc";
+
+//Components
+
+//media
+@import "media";

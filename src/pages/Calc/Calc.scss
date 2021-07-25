@@ -1,0 +1,31 @@
+.calc {
+	width: 554px;
+	background: $bgCalc;
+	border-radius: $br;
+	box-shadow: $bgCalcShadow;
+	margin: 38px 31px;
+	padding: 44px 48px;
+
+	&__wrapper {
+		background: $bgCalcWrapper;
+		border-radius: $br;
+		backdrop-filter: blur(4px);
+	}
+
+	&__history {
+		width: 100%;
+		height: 100px;
+		font-size: $sm;
+		margin-bottom: 10px;
+	}
+
+	&__res {
+		margin-bottom: 37px;
+	}
+
+	&__controls {
+		&>* {
+			margin: 5px 8px;
+		}
+	}
+}
