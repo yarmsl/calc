@@ -1,4 +1,4 @@
-import React, { ReactElement, MouseEvent, ChangeEvent, useState } from 'react';
+import React, { ReactElement, MouseEvent, ChangeEvent, KeyboardEvent, useState } from 'react';
 import { calc, str2arr, checkDoubleSymbol, checkComma } from '../../lib/Calc';
 import { Box, Button, TextInput } from '../../UI/CalcUI';
 
@@ -14,9 +14,9 @@ function Calc(): ReactElement {
 		case 'C':
 			return setValue(''), setHistory('');
 		case '√':
-			return setValue(prev => Math.sqrt(+(prev.replace(',','.'))) + ''), setHistory(`√${value}`);
+			return setValue(prev => Math.sqrt(+(calc(str2arr(prev.replace(',','.'))))) + ''), setHistory(`√${value}`);
 		case '%':
-			return setValue(prev => (+(prev.replace(',','.')) / 100) + ''), setHistory(`%${value}`);
+			return setValue(prev => (+(calc(str2arr(prev.replace(',','.')))) / 100) + ''), setHistory(`%${value}`);
 		case '/':
 			return setValue(prev => checkDoubleSymbol(prev.slice(-1)) && prev ? `${prev}/` : prev);
 		case '×':
@@ -53,8 +53,14 @@ function Calc(): ReactElement {
 		setHistory(value);
 	};
 
+	const handleCalc = (e: KeyboardEvent<HTMLDivElement>) => {
+		if (e.key === 'Enter') {
+			calculate();
+		}
+	};
+
 	return (
-		<Box className='calc__wrapper'>
+		<Box onKeyDown={e => handleCalc(e)} className='calc__wrapper'>
 			<Box className='calc' direction='column'>
 				<Box align='end' justify='end' className='calc__history'>{history}</Box>
 				<TextInput

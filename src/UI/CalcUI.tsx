@@ -7,10 +7,11 @@ const Box = ({
 	align = 'start',
 	justify = 'start',
 	wrap='nowrap',
-	className = ''
+	className = '',
+	onKeyDown
 }: BoxUI): ReactElement => {
 	return (
-		<div className={`box box__${direction} box__align_${align} box__justify_${justify} box__${wrap} ${className}`}>
+		<div onKeyDown={onKeyDown} className={`box box__${direction} box__align_${align} box__justify_${justify} box__${wrap} ${className}`}>
 			{children}
 		</div>
 	);

@@ -16,6 +16,7 @@ export const checkDoubleSymbol = (str: string): boolean => {
 };
 
 export const checkComma = (str: string): boolean => {
+	console.log(str);
 	if (str.indexOf(',') !== -1) {
 		return false;
 	} else {

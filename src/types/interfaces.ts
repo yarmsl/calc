@@ -9,8 +9,9 @@ export interface BoxUI  {
 	direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
 	align?: 'start' | 'center' | 'end';
 	justify?: 'start' | 'end' | 'center' | 'around' | 'between' | 'evenly';
-	wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
+	wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
 	className?: string;
+	onKeyDown?: React.KeyboardEventHandler<HTMLDivElement>;
 }
 
 export interface ButtonUI {
