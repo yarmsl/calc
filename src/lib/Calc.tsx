@@ -37,7 +37,6 @@ const arrModify = (res: number, str: string, arr:(string | number)[] ): (string 
 	arr[arr.indexOf(str) - 1] = res;
 	arr.splice(arr.indexOf(str) + 1, 1);
 	arr.splice(arr.indexOf(str), 1);
-	console.log(arr);
 	return arr;
 };
 
