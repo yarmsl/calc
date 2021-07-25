@@ -14,9 +14,9 @@ function Calc(): ReactElement {
 		case 'C':
 			return setValue(''), setHistory('');
 		case '√':
-			return setValue(prev => Math.sqrt(+prev) + ''), setHistory(`√${value}`);
+			return setValue(prev => Math.sqrt(+(prev.replace(',','.'))) + ''), setHistory(`√${value}`);
 		case '%':
-			return setValue(prev => (+prev / 100) + ''), setHistory(`%${value}`);
+			return setValue(prev => (+(prev.replace(',','.')) / 100) + ''), setHistory(`%${value}`);
 		case '/':
 			return setValue(prev => checkDoubleSymbol(prev.slice(-1)) && prev ? `${prev}/` : prev);
 		case '×':
