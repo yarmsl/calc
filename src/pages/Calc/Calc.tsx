@@ -10,13 +10,14 @@ function Calc(): ReactElement {
 	const [value, setValue] = useState('');
 
 	const valueSwitcher = (str: string, sli?: boolean) => {
+		const couNum = (str: string): number => +(calc(str2arr(str.replace(',','.'))));
 		switch (sli ? str.slice(-1) :str) {
 		case 'C':
 			return setValue(''), setHistory('');
 		case '√':
-			return setValue(prev => Math.sqrt(+(calc(str2arr(prev.replace(',','.'))))) + ''), setHistory(`√${value}`);
+			return setValue(prev => Math.sqrt(couNum(prev)) + ''), setHistory(`√${value}`);
 		case '%':
-			return setValue(prev => (+(calc(str2arr(prev.replace(',','.')))) / 100) + ''), setHistory(`%${value}`);
+			return setValue(prev => (couNum(prev) / 100) + '') , setHistory(`%${value}`);
 		case '/':
 			return setValue(prev => checkDoubleSymbol(prev.slice(-1)) && prev ? `${prev}/` : prev);
 		case '×':
@@ -54,7 +55,7 @@ function Calc(): ReactElement {
 	};
 
 	const handleCalc = (e: KeyboardEvent<HTMLDivElement>) => {
-		if (e.key === 'Enter') {
+		if (e.key === 'Enter' || e.key === 'Return') {
 			calculate();
 		}
 	};

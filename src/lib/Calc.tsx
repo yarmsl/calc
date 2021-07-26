@@ -2,7 +2,7 @@ export const checkDoubleSymbol = (str: string): boolean => {
 	switch (str) {
 	case '/':
 		return false;
-	case '×':
+	case '':
 		return false;
 	case '+':
 		return false;
@@ -16,12 +16,12 @@ export const checkDoubleSymbol = (str: string): boolean => {
 };
 
 export const checkComma = (str: string): boolean => {
-	console.log(str);
-	if (str.indexOf(',') !== -1) {
-		return false;
-	} else {
-		return true;
-	}
+	str;
+	// if (str.indexOf(',') !== -1) {
+	// 	return false;
+	// } else {
+	return true;
+	// }
 };
 
 export const str2arr = (str: string): (string | number)[] => {
